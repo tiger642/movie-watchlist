@@ -1,0 +1,174 @@
+/* 
+
+css to-do list
+-add box-shadow to input field
+-find a fitting font
+-style button
+-style movie cards
+
+*/
+
+@import url('https://rsms.me/inter/inter.css');
+
+html, body {
+    margin: 0;
+    background-color:#121212;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+#background {
+    background-image: url('https://assets.codepen.io/5515635/movie-watchlist-andre-tan-sm_1.jpg');
+    background-size: cover;
+    background-position: 50% 15%;
+    background-color: #8c8c8c;
+    background-blend-mode: multiply;
+}
+
+/* header */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 50%;
+    margin: auto;
+    padding: 125px 0;
+}
+
+h2 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: 800;
+}
+
+/* link styling */
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #838383;
+}
+
+/* search field */
+
+.search {
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input {
+    background-color:#2E2E2F;
+    width: 40%;
+    color: rgb(161, 161, 161);
+}
+
+input:focus {
+    outline: none;
+    color: #fff;
+}
+
+/* button styling */
+
+button {
+    background-color:#4B4B4B;
+    width: 10%;
+    color: #fff;
+}
+
+section {
+    translate:0 -50%;
+    display: flex;
+    justify-content: center;
+}
+
+/* search results */
+
+#movies {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+#placeholder {
+    color: rgb(62, 62, 62);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa {
+    font-size: 200px;
+}
+
+#placeholder p {
+    font-size: 24px;
+    text-align: center;
+}
+
+/* movie search results */
+
+hr {
+    width: 80%;
+    color: #A5A5A5;
+    margin: 20px auto;
+}
+
+.movie-card {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.movie-img {
+    height: 150px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.section1 {
+    display: flex;
+    align-items: baseline;
+}
+
+.section1 h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.section1 p,.section2 {
+    font-size: 12px;
+}
+
+.section2 {
+    display: flex;
+}
+
+.section3 {
+    color: #A5A5A5;
+    font-size: 14px;
+    margin: 0;
+}

@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    background-color:#121212;
+    color: #fff;
+}
+
+body {
+    height: 100vh;
+}
+
+#background {
+    background-image: url('https://assets.codepen.io/5515635/movie-watchlist-andre-tan-sm_1.jpg');
+    background-size: cover;
+    background-position: 50% 15%;
+    background-color: #4F4A4A;
+    background-blend-mode: multiply;
+}
+
+/* header */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 50%;
+    margin: auto;
+    padding: 125px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* link styling */
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #838383;
+}
