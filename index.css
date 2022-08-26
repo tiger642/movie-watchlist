@@ -75,7 +75,7 @@ a:hover {
 
 input {
     background-color:#2E2E2F;
-    width: 40%;
+    width: 70%;
     color: rgb(161, 161, 161);
 }
 
@@ -86,13 +86,13 @@ input:focus {
 
 /* button styling */
 
-button {
+#button-el {
     background-color:#4B4B4B;
     width: 10%;
     color: #fff;
 }
 
-section {
+#search {
     translate:0 -50%;
     display: flex;
     justify-content: center;
@@ -103,7 +103,6 @@ section {
 #movies {
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
 }
 
 #placeholder {
@@ -126,49 +125,33 @@ section {
 /* movie search results */
 
 hr {
-    width: 80%;
+    width: 70%;
     color: #A5A5A5;
     margin: 20px auto;
 }
 
 .movie-card {
-    width: 80%;
+    position: relative;
+    width: 60%;
     display: flex;
     margin: auto;
     align-items: center;
 }
 
+.movie-info { }
+
 .movie-img {
-    height: 150px;
+    height: 200px;
+    margin: auto 30px;
 }
 
-.movie-info {
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
-}
-
-.section1 {
-    display: flex;
-    align-items: baseline;
-}
-
-.section1 h4 {
+.movie-title {
     font-size: 18px;
     font-weight: 500;
-    margin: 0;
+    margin: 12px 25px;
 }
 
-.section1 p,.section2 {
-    font-size: 12px;
-}
-
-.section2 {
-    display: flex;
-}
-
-.section3 {
-    color: #A5A5A5;
-    font-size: 14px;
-    margin: 0;
+.fa-solid {
+    color: rgb(217, 178, 107);
+    margin: 12px 0;
 }

@@ -47,3 +47,113 @@ a:visited {
 a:hover {
     color: #838383;
 }
+
+#empty-watchlist-link {
+    text-decoration: underline;
+}
+
+/* search results */
+
+#movies {
+    display: flex;
+    flex-direction: column;
+}
+
+#placeholder {
+    color: rgb(62, 62, 62);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa {
+    font-size: 200px;
+}
+
+.fa-magnifying-glass{
+    font-size: 48px;
+}
+
+#placeholder p {
+    font-size: 24px;
+    text-align: center;
+}
+
+/* movie search results */
+
+hr {
+    width: 70%;
+    color: #A5A5A5;
+    margin: 20px auto;
+}
+
+.movie-card {
+    position: relative;
+    width: 60%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.movie-img {
+    height: 200px;
+    margin: auto 30px;
+}
+
+#movie-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.section1 {
+    display: flex;
+    align-items: baseline;
+}
+
+#movie-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 12px 25px;
+}
+
+#watchlist-btn {
+    display: flex;
+    align-items: baseline;
+}
+
+.section1 p,.section2 {
+    font-size: 12px;
+}
+
+.section2 {
+    display: flex;
+    align-items: baseline;
+}
+
+#movie-runtime {
+    margin: 12px 25px;
+}
+
+#movie-genre{
+    margin: 12px 25px;
+}
+
+.fa-solid {
+    margin: 12px 0;
+}
+
+#watchlist-text{
+    margin: 12px 5px;
+}
+
+.section3 {
+    color: #A5A5A5;
+    font-size: 13px;
+    margin: 12px 25px;
+}
+
+#read-more, #dots, #read-less, #more {
+    display: none;
+}

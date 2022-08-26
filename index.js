@@ -1,38 +1,52 @@
-//on input call a function that searches the database and returns movies that match the current string
-//once the movies are returned manipulate the dom to show the search results
+//api key
+const apikey = '98e1174'
 
-//on click event that adds a returned movie to a list that is saved to local storage
-
-const inputEl = document.getElementById('input-el')
-const buttonEl = document.getElementById('button-el')
-const movieSection = document.getElementById('movies')
-const OMDB_API_KEY = '98e1174'
+//grab DOM elements
+const searchInput = document.getElementById('input-el')
+const searchBtn = document.getElementById('button-el')
+const movieList = document.getElementById('movies')
 
 
-buttonEl.addEventListener('click', async () => {
-    let searchInput = inputEl.value
-    const response = await 
-    fetch(`http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${searchInput}&type=Movie`)
-    const data = await response.json()
-    console.log(data)
-    movieSection.innerHTML = 
-    `
-        <hr>
-            <div class='movie-card'>
-                <img class='movie-img' src='${data.Poster}'>            
-                <div class='movie-info'>
-                    <div class='section1'>
-                        <h4>${data.Title}</h4>
-                        <p>${data.Ratings[0].Value}</p>
-                    </div>
-                    <div class='section2'>
-                        <p>${data.Runtime}</p>
-                        <p>${data.Genre}</p>
-                        <p></p> 
-                    </div>
-                    <p class='section3'>${data.Plot}</p>
-                </div> 
-            </div>
-        <hr>
-    `
-})
+async function fetchMovies(searchTerm) {
+    const URL = `http://www.omdbapi.com/?apikey=${apikey}&s=${searchTerm}`
+    const res = await fetch(`${URL}`)
+    const movies = await res.json()
+    console.log(movies.Search)
+    if(movies.Response == 'True') {
+        displayMovieList(movies.Search)
+    } else {
+        movieList.innerHTML = `
+            <section class='movie-card'>
+                We can't seem to find anything . . . try being more specific
+            </section>
+            `
+    }
+}
+
+function displayMovieList(movies) {
+    movieList.innerHTML = ''
+    let movieCard = document.createElement('div')
+    for (let i = 0; i < movies.length; i++) { 
+        movieCard = `
+                    <section class='movie-card'>
+                        <img src='${movies[i].Poster}' class='movie-img' />
+                        <div class='movie-info'>
+                            <div class='movie-title'>${movies[i].Title}</div>
+                            <div>${movies[i].Year}</div>
+                        </div>
+                    </section>
+                    <hr>
+                    `       
+        movieList.innerHTML += movieCard
+
+        onmouseover = (moreInfo) => {  }
+    }
+}
+
+function findMovies() {
+    let searchTerm = searchInput.value
+    fetchMovies(searchTerm)
+}
+
+
+searchInput.addEventListener('input', findMovies)
