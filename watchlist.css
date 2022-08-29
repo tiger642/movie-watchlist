@@ -12,7 +12,7 @@ body {
     background-image: url('https://assets.codepen.io/5515635/movie-watchlist-andre-tan-sm_1.jpg');
     background-size: cover;
     background-position: 50% 15%;
-    background-color: #4F4A4A;
+    background-color: #8c8c8c;
     background-blend-mode: multiply;
 }
 
@@ -28,8 +28,9 @@ body {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 42px;
     margin: 0;
+    font-weight: 800;
 }
 
 /* link styling */
@@ -60,7 +61,7 @@ a:hover {
 }
 
 #placeholder {
-    color: rgb(62, 62, 62);
+    color: rgb(110, 110, 110);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,59 +102,18 @@ hr {
     margin: auto 30px;
 }
 
-#movie-info {
+.movie-info {
     display: flex;
+    margin: auto;
     flex-direction: column;
-    padding: 0 20px;
 }
 
-.section1 {
-    display: flex;
-    align-items: baseline;
-}
-
-#movie-title {
+.movie-title {
     font-size: 18px;
     font-weight: 500;
-    margin: 12px 25px;
-}
-
-#watchlist-btn {
-    display: flex;
-    align-items: baseline;
-}
-
-.section1 p,.section2 {
-    font-size: 12px;
-}
-
-.section2 {
-    display: flex;
-    align-items: baseline;
-}
-
-#movie-runtime {
-    margin: 12px 25px;
-}
-
-#movie-genre{
-    margin: 12px 25px;
+    margin-bottom: 10px;
 }
 
 .fa-solid {
     margin: 12px 0;
-}
-
-#watchlist-text{
-    margin: 12px 5px;
-}
-
-.section3 {
-    color: #A5A5A5;
-    font-size: 13px;
-    margin: 12px 25px;
-}
-
-#read-more, #dots, #read-less, #more {
-    display: none;
 }
