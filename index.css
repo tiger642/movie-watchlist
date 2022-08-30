@@ -1,9 +1,7 @@
 /* 
 
 css to-do list
--add box-shadow to input field
 -find a fitting font
--style button
 -style movie cards
 
 */
@@ -75,7 +73,7 @@ a:hover {
 
 input {
     background-color:#2E2E2F;
-    width: 70%;
+    width: 60%;
     color: rgb(161, 161, 161);
 }
 
@@ -90,6 +88,7 @@ input:focus {
     background-color:#4B4B4B;
     width: 10%;
     color: #fff;
+    border: none;
 }
 
 #search {
@@ -147,15 +146,51 @@ hr {
     display: flex;
     margin: auto;
     flex-direction: column;
+    font-size: 14px;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: row;
 }
 
 .movie-title {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 10px;
+}
+
+.movie-year {
+    margin: 0 20px;
+}
+
+.movie-runtime {
+    margin: 0 20px;
+}
+
+#watchlist {
+    margin-left: auto;
+}
+
+.actors {
+    margin-bottom: 5px;
+}
+
+.director {
+    margin-bottom: 5px;
 }
 
 .fa-solid {
     color: rgb(217, 178, 107);
     margin: 12px 0;
+}
+
+.fa-star { 
+    margin: 0 2px;
 }
