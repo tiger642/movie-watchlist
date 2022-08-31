@@ -1,9 +1,6 @@
 /* 
-
-css to-do list
--find a fitting font
--style movie cards
-
+to-do list
+-style watchlist buttons
 */
 
 @import url('https://rsms.me/inter/inter.css');
@@ -174,7 +171,7 @@ hr {
     margin: 0 20px;
 }
 
-#watchlist {
+.watchlist {
     margin-left: auto;
 }
 

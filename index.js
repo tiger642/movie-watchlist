@@ -1,7 +1,8 @@
 //to-do list
-//save returned api data to local storage
-//add the watchlist button 
+//save watchlist data to local storage
+//change watchlist function to not add data that is already there
 //display default image for when image is not available
+//add notes to each function
 
 //api key
 const apikey = '98e1174'
@@ -12,7 +13,6 @@ const searchBtn = document.getElementById('button-el')
 const movieList = document.getElementById('movies')
 
 //array of objects that makes up watchlist
-let watchlistArr = []
 let detailedInfo = []
 
 //determine whether to display add or remove button 
@@ -38,7 +38,7 @@ const fetchMoreInfo = async(movieId) => {
     const URL = `http://www.omdbapi.com/?apikey=${apikey}&i=${movieId}`
     const res = await fetch(`${URL}`)
     const moreInfo = await res.json()
-    console.log(moreInfo)
+    // console.log(moreInfo)
     return moreInfo 
 }
 
@@ -48,7 +48,6 @@ const displayMovieList = async(movies) => {
     let movieCard = document.createElement('div')
     for (let i = 0; i < movies.length; i++) { 
         let data = await fetchMoreInfo(movies[i].imdbID)
-        detailedInfo = [data.Poster]
         movieCard = 
                     `<section class='movie-card'>
                         <img src='${data.Poster}' class='movie-img' />
@@ -61,7 +60,7 @@ const displayMovieList = async(movies) => {
                             <section class='section2'>
                                 <div class='movie-rating'><b>${data.Rated}</b></div>
                                 <div class='movie-runtime'>${data.Runtime}</div>
-                                <button id='watchlist'>Add to Watchlist</button>
+                                <button class='watchlist'>Add to Watchlist</button>
                             </section>
                             <section class='section3'>
                                 <div class='actors'><b>Actors:</b> ${data.Actors}</div>
@@ -71,13 +70,28 @@ const displayMovieList = async(movies) => {
                         </div>
                     </section>
                     <hr>`       
-        movieList.innerHTML += movieCard
-        
-    }
-    console.log(data.Poster)
+        movieList.innerHTML += movieCard 
+}
 }
 
-
+// const watchlistEl = document.getElementsByClassName('watchlist')
+// for (let i = 0; i < watchlistEl.length; i++) {
+// watchlistEl[i].addEventListener('click', (i) => {
+    
+//     detailedInfo.push({
+//         movieId: `${data.imdbID}`,
+//         movieTitle: `${data.Title}`,
+//         movieYear: `${data.Year}`,
+//         imdbRating: `${data.imdbRating}`,
+//         movieRating: `${data.Rated}`,
+//         movieRuntime: `${data.Runtime}`,
+//         actors: `${data.Actors}`,
+//         director: `${data.Director}`,
+//         moviePlot: `${data.Plot}`
+//     })
+//     console.log(detailedInfo)
+// })}
+// }
 
 //grab search bar input
 const findMovies = ()  => {
