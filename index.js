@@ -11,9 +11,10 @@ const apikey = '98e1174'
 const searchInput = document.getElementById('input-el')
 const searchBtn = document.getElementById('button-el')
 const movieList = document.getElementById('movies')
+const watchlistEl = document.getElementsByClassName('watchlist')
 
 //array of objects that makes up watchlist
-let detailedInfo = []
+let watchlist = []
 
 //determine whether to display add or remove button 
 let addRemoveWatchlist = ''
@@ -46,8 +47,8 @@ const fetchMoreInfo = async(movieId) => {
 const displayMovieList = async(movies) => {
     movieList.innerHTML = ''
     let movieCard = document.createElement('div')
-    for (let i = 0; i < movies.length; i++) { 
-        let data = await fetchMoreInfo(movies[i].imdbID)
+    movies.forEach(async (movie) => { 
+        let data = await fetchMoreInfo(movie.imdbID)
         movieCard = 
                     `<section class='movie-card'>
                         <img src='${data.Poster}' class='movie-img' />
@@ -70,28 +71,22 @@ const displayMovieList = async(movies) => {
                         </div>
                     </section>
                     <hr>`       
-        movieList.innerHTML += movieCard 
-}
-}
+        movieList.innerHTML += movieCard
+        for (let i = 0; i < watchlistEl.length; i++) {
+        watchlistEl[i].addEventListener('click', () => {
+            addToWatchlist(data)
+        })
+        }
+})}
 
-// const watchlistEl = document.getElementsByClassName('watchlist')
-// for (let i = 0; i < watchlistEl.length; i++) {
-// watchlistEl[i].addEventListener('click', (i) => {
-    
-//     detailedInfo.push({
-//         movieId: `${data.imdbID}`,
-//         movieTitle: `${data.Title}`,
-//         movieYear: `${data.Year}`,
-//         imdbRating: `${data.imdbRating}`,
-//         movieRating: `${data.Rated}`,
-//         movieRuntime: `${data.Runtime}`,
-//         actors: `${data.Actors}`,
-//         director: `${data.Director}`,
-//         moviePlot: `${data.Plot}`
-//     })
-//     console.log(detailedInfo)
-// })}
-// }
+const addToWatchlist = data => {
+    watchlist.push({entry: data.Title})
+    console.log(watchlist)
+}  
+            
+
+
+
 
 //grab search bar input
 const findMovies = ()  => {
