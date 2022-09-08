@@ -1,0 +1,4 @@
+--change removeFromWatchlist to only pop the item off and update localStorage, dont rerender the whole page
+--change the css for the buttons
+--fix searchbar width and search btn css
+--format the watchlist page so that the list doesnt start so high up on the page

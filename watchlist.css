@@ -54,14 +54,44 @@ a:hover {
     color: #838383;
 }
 
-#empty-watchlist-link {
-    text-decoration: underline;
-    font-size: 24px;
+/* search field */
+
+.search {
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input {
+    background-color:#2E2E2F;
+    width: 60%;
+    color: rgb(161, 161, 161);
+}
+
+input:focus {
+    outline: none;
+    color: #fff;
+}
+
+/* button styling */
+
+#button-el {
+    background-color:#4B4B4B;
+    width: 10%;
+    color: #fff;
+    border: none;
+}
+
+#search {
+    translate:0 -50%;
+    display: flex;
+    justify-content: center;
 }
 
 /* search results */
 
-#movies {
+#watchlist {
     display: flex;
     flex-direction: column;
 }
@@ -76,10 +106,6 @@ a:hover {
 
 .fa {
     font-size: 200px;
-}
-
-.fa-magnifying-glass{
-    font-size: 48px;
 }
 
 #placeholder p {
@@ -108,18 +134,55 @@ hr {
     margin: auto 30px;
 }
 
-.movie-info {
+.movie-info { 
     display: flex;
     margin: auto;
     flex-direction: column;
+    font-size: 14px;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: row;
 }
 
 .movie-title {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
+.movie-year {
+    margin: 0 20px;
+}
+
+.movie-runtime {
+    margin: 0 20px;
+}
+
+#watchlistbtn {
+    margin-left: auto;
+}
+
+.actors {
+    margin-bottom: 5px;
+}
+
+.director {
+    margin-bottom: 5px;
+}
+
 .fa-solid {
+    color: rgb(217, 178, 107);
     margin: 12px 0;
+}
+
+.fa-star { 
+    margin: 0 2px;
 }
